@@ -22,7 +22,7 @@ const Details = () => {
   const { name, email, address, gender } = getUserById;
 
   const getDataById = async () => {
-    const res = await fetch(`/getuser/${id}`, {
+    const res = await fetch(`https://deval-mern-crud.herokuapp.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Details = () => {
   }, []);
 
   const deleteUser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
+    const res2 = await fetch(`https://deval-mern-crud.herokuapp.com/deleteuser/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

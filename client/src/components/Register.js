@@ -39,7 +39,7 @@ const Register = () => {
     } else if (address === "" || address === undefined) {
       toast.error("Enter your address");
     } else {
-      const res = await fetch("/register", {
+      const res = await fetch("https://deval-mern-crud.herokuapp.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

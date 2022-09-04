@@ -7,7 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
-  const [getUserData, setUserData] = useState();
+  const [getUserData, setUserData] = useState([]);
+  console.log(getUserData);
+
 
   const navigate = useNavigate();
   const gotoRegister = () => {
@@ -23,7 +25,7 @@ const Home = () => {
   }, []);
 
   const getData = async () => {
-    const res = await fetch("/getdata", {
+    const res = await fetch("https://deval-mern-crud.herokuapp.com/getdata", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -42,10 +44,9 @@ const Home = () => {
       // setINP("");
     }
   };
-  console.log(getUserData);
 
   const deleteUser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
+    const res2 = await fetch(`https://deval-mern-crud.herokuapp.com/deleteuser/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

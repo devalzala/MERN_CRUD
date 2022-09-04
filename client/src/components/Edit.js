@@ -30,7 +30,7 @@ const Edit = () => {
   console.log(id);
 
   const getDataById = async () => {
-    const res = await fetch(`/getuser/${id}`, {
+    const res = await fetch(`https://deval-mern-crud.herokuapp.com/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Edit = () => {
 
     const { name, email, gender, address } = inpVal;
 
-    const res2 = await fetch(`/updateuser/${id}`, {
+    const res2 = await fetch(`https://deval-mern-crud.herokuapp.com/updateuser/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
